@@ -1,10 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { FluentProvider, teamsLightTheme } from "@fluentui/react-components";
+import App from "./App.tsx";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+
+const bodyRoot = document.getElementById("root");
+if (bodyRoot) {
+  createRoot(bodyRoot).render(
+    <StrictMode>
+      <FluentProvider theme={teamsLightTheme}>
+        <App />
+      </FluentProvider>
+    </StrictMode>
+  );
+}
