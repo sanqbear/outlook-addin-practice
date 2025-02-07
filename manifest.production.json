@@ -24,7 +24,20 @@
   "accentColor": "#230201",
   "localizationInfo": {
     "defaultLanguageTag": "en-us",
-    "additionalLanguages": [ ]
+    "additionalLanguages": [
+      {
+        "languageTag": "ko-kr",
+        "file": "locales/ko-kr.json"
+      },
+      {
+        "languageTag": "en-us",
+        "file": "locales/en-us.json"
+      },
+      {
+        "languageTag": "zh-cn",
+        "file": "locales/zh-cn.json"
+      }
+    ]
   },
   "authorization": {
     "permissions": {

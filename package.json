@@ -3,14 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "config": {
-    "app_to_debug": "outlook",
-    "app_type_to_debug": "web",
-    "dev_server_port": 3000
-  },
   "scripts": {
     "dev-server": "vite",
-    "start": "office-addin-debugging start manifest.json",
+    "start": "concurrently \"vite\" \"wait-on https://localhost:3000 && echo y | office-addin-debugging start manifest.xml\"",
+    "stop": "office-addin-debugging stop manifest.json",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -29,6 +25,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "babel-plugin-module-resolver": "^5.0.2",
+    "concurrently": "^9.1.2",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
@@ -42,6 +39,7 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
     "vite": "^6.1.0",
-    "vite-plugin-mkcert": "^1.17.6"
+    "vite-plugin-mkcert": "^1.17.6",
+    "wait-on": "^8.0.2"
   }
 }
